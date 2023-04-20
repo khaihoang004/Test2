@@ -1,0 +1,331 @@
+using Class1;
+using System;
+using System.Data;
+using System.Net.Security;
+using System.Numerics;
+using System.Text;
+using System.Xml.Linq;
+
+
+namespace BTVNBuoi3
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            ////Bai Tap 1
+            //Console.WriteLine("Nhap vao 2 so: ");
+            //int x = Convert.ToInt32(Console.ReadLine());
+            //int y = Convert.ToInt32(Console.ReadLine());
+            //Console.Write("Tong hai so la: "); Console.WriteLine(x+y);
+            //Console.WriteLine("------------------------------------");
+            //Console.Beep();
+
+
+            ////Bai tap 2
+            //Console.Write("Nhap so bi chia: ");
+            //int x2 = Convert.ToInt32(Console.ReadLine());
+            //Console.Write("Nhap so chia: ");
+            //int y2 = Convert.ToInt32(Console.ReadLine());
+            //Console.Write("Thuong cua phep chia: ");
+            //Console.WriteLine(x2 / y2);
+            //Console.Write("So du cua phep chia: ");
+            //Console.WriteLine(x2 % y2);
+            //Console.WriteLine("------------------------------------");
+            //Console.Beep();
+
+            ////Bai Tap 3
+            //Console.WriteLine("Nhap vao 2 so: ");
+            //int x3 = Convert.ToInt32(Console.ReadLine());
+            //int y3 = Convert.ToInt32(Console.ReadLine());
+            //Console.Write("Tong hai so la: "); Console.WriteLine(x3 + y3);
+            //Console.WriteLine("------------------------------------");
+            //Console.Beep();
+
+            ////Bai Tap 4
+            //Console.WriteLine("Nhap vao 2 so: ");
+            //int x4 = Convert.ToInt32(Console.ReadLine());
+            //int y4 = Convert.ToInt32(Console.ReadLine());
+            //Console.Write("Tong hai so la: "); Console.WriteLine(x4+ y4);
+            //Console.Write("Hieu hai so la: "); Console.WriteLine(x4 - y4);
+            //Console.Write("Tich hai so la: "); Console.WriteLine(x4 * y4);
+            //Console.Write("Thuong hai so la: "); Console.WriteLine(x4 / y4);
+            //Console.WriteLine("------------------------------------");
+            //Console.Beep();
+
+            ////Bai Tap 5
+            //int x5, y5, z5;
+            //Console.Write("\nNhap so dau tien: ");
+            //x5 = int.Parse(Console.ReadLine());
+            //Console.Write("\nNhap so thu hai: ");
+            //y5 = int.Parse(Console.ReadLine());
+            //z5 = x5;
+            //x5 = y5;
+            //y5 = z5;
+            //Console.Write("\nSau khi trao doi: ");
+            //Console.Write("\nGia tri cua so 1 la: " + x5);
+            //Console.Write("\nGia tri cua so 2 la: " + y5);
+            //Console.WriteLine("\n------------------------------------");
+            //Console.Beep();
+
+            ////Bai Tap 6
+            //Console.Write("Nhap vao 1 so: ");
+            //int x6 = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("Bang nhan cua {0} la", x6);
+            //for (int i = 1;i< 11;i++)
+            //{
+            //    Console.WriteLine("{0} * {1} = {2}", x6,i,x6*i);
+            //}
+            //Console.WriteLine("\n------------------------------------");
+            //Console.Beep();
+
+
+
+            ////Bai Tap 7
+            //Console.WriteLine("Nhap vao 4 so: ");
+            //int x7 = Convert.ToInt32(Console.ReadLine());
+            //int y7 = Convert.ToInt32(Console.ReadLine());
+            //int z7 = Convert.ToInt32(Console.ReadLine());
+            //int t7 = Convert.ToInt32(Console.ReadLine());
+            //Console.Write("Trung binh cong cua 4 so la: {0}",(x7+y7+z7+t7)/4);
+            //Console.WriteLine("\n------------------------------------");
+            //Console.Beep();
+
+
+
+            ////Bai Tap 8
+            //Console.WriteLine("Nhap vao nhiet do C: ");
+            //float x8 = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("Doi sang do F: {0}",32 + x8 * 1.6);
+            //Console.WriteLine("Doi sang do K: {0}", 273.15 + x8);
+            //Console.WriteLine("\n------------------------------------");
+            //Console.Beep();
+
+
+
+
+
+
+            //Bai Tap 2
+            string[] s = File.ReadAllLines("Dulieuhocvien.txt");
+            string[] fullname = new string[13];
+            for (int i = 0; i < 13; i++)
+            {
+                fullname[i] = s[6 * i];
+            }
+            
+
+            
+
+            for (int j = 0; j < fullname[0].Length; j++)
+            {
+                
+                string x = fullname[0].Substring(0, 1);
+                if (" " == x)
+                {
+                    Console.WriteLine("Dau cach xuat hien o vi tri {0}", j + 1);
+                }
+                fullname[0] = fullname[0].Substring(1, fullname[0].Length-1);
+            }
+
+
+
+
+
+
+
+            
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //BTVN B3 
+            string[] s = File.ReadAllLines("Dulieuhocvien.txt");
+            string[] fullname = new string[13];
+            string[] Ten = new string[13];
+            string[] firstname = new string[13];
+            string[] gender = new string[13];
+            string[] uni = new string[13];
+            string[] abode = new string[13];
+            string[] home = new string[13];
+            string[] birth = new string[13];
+            string substr;
+
+
+
+            for (int i = 0; i < 13; i++)  //Lay gender, uni, abode, home, birth
+            {
+                fullname[i] = s[6 * i];
+                gender[i] = s[6 * i + 1];
+                uni[i] = s[6 * i + 2];
+                abode[i] = s[6 * i + 3];
+                home[i] = s[6 * i + 4];
+                birth[i] = s[6 * i + 5];
+            }
+
+
+
+            for (int i = 0; i < 13; i++)        // Lay Ho
+            {
+                firstname = fullname[i].Split(' ');
+                Console.WriteLine(firstname[0]);
+            }
+
+            Console.WriteLine("---------------------------------------------------");
+
+            for (int i = 0; i < 13; i++)        //Lay Ten
+            {
+                Ten[i] = fullname[i];
+                for (int spaceposition = 0; spaceposition < Ten[i].Length - 1; spaceposition++)
+                {
+                    spaceposition = Ten[i].IndexOf(" ");
+
+                    substr = Ten[i].Substring(0, spaceposition);
+
+                    string removed = Ten[i].Remove(0, spaceposition + 1);
+                    Ten[i] = removed;
+
+                }
+                Console.WriteLine(Ten[i]);
+
+            }
+            Console.WriteLine("---------------------------------------------------");
+
+            for (int i = 0; i < 13; i++)
+            {
+
+            }
+
+
+            //Luu lai du lieu
+            File.WriteAllText("DulieuhocvienBosung.txt", "");
+            for (int i = 0; i < 13; i++)
+            {
+                File.AppendAllText("DulieuhocvienBosung.txt", fullname[i] + "\n");
+                File.AppendAllText("DulieuhocvienBosung.txt", gender[i] + "\n");
+                File.AppendAllText("DulieuhocvienBosung.txt", birth[i] + "\n");
+                File.AppendAllText("DulieuhocvienBosung.txt", uni[i] + "\n");
+                File.AppendAllText("DulieuhocvienBosung.txt", abode[i] + "\n");
+                File.AppendAllText("DulieuhocvienBosung.txt", home[i] + "\n");
+                File.AppendAllText("DulieuhocvienBosung.txt", firstname[0] + "\n");
+                File.AppendAllText("DulieuhocvienBosung.txt", Ten[i] + "\n");
+            }
+
+
+            //Doc ra ket qua
+
+
+    string[] s = File.ReadAllLines("DuLieuHocVien.txt");
+
+            for (int i = 0; i < n; i++)
+            {
+
+                s1[i].name = s[6 * i];
+                s1[i].gender = s[6 * i + 1];
+                s1[i].birth = DateOnly.Parse(s[6 * i + 2]);
+                s1[i].uni = s[6 * i + 3];
+                s1[i].abode = s[6 * i + 4];
+                s1[i].home = s[6 * i + 5];
+            }
+
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write("Tra ra thong tin hoc vien "); Console.Write(i + 1); Console.WriteLine(": ");
+
+                Console.Write("Ten: "); Console.WriteLine(s1[i].name);
+                Console.Write("Gioi tinh: "); Console.WriteLine(s1[i].gender);
+                Console.Write("Ngay sinh: "); Console.WriteLine(s1[i].birth);
+                Console.Write("Truong: "); Console.WriteLine(s1[i].uni);
+                Console.Write("Noi o: "); Console.WriteLine(s1[i].abode);
+                Console.Write("Que quan: "); Console.WriteLine(s1[i].home);
+                Console.WriteLine("-----------------~~~-----------------");
+
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            //HocVien sv = new HocVien();
+            //sv.name = "Nguyen Van A";
+
+            //string[] hoTenArray = sv.name.Split(' ');
+            //if (hoTenArray.Length > 0)
+            //{
+            //    sv.ho = hoTenArray[0];
+            //}
+            //if (hoTenArray.Length > 1)
+            //{
+            //    sv.ten = hoTenArray[hoTenArray.Length - 1];
+            //}
+
+            //Console.WriteLine(sv.ho);
+            //Console.WriteLine(sv.ten);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //Chua lam bai 2
+            //Chưa gắn họ, tên vào biến HocVien.ho và HocVien.ten mới chỉ lấy được giá trị đưa vào firstname[i] và Ten[i]
+
+
+
+            //string s1 = string.Join(",\n", name);
+
+
+
+
+
+
+
+        }
+    }
+}
